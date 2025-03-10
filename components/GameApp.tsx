@@ -1,6 +1,5 @@
 "use client"
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 
 const cities = [
     { name: "Yapkashnagar", distance: 60 },
@@ -24,15 +23,8 @@ function GameApp() {
     ]);
     const [fugitiveCity, setFugitiveCity] = useState("");
     const [showResult, setShowResult] = useState(false);
-    const router = useRouter();
 
     type SelectionField = "city" | "vehicle";
-
-    interface HandleSelectProps {
-        index: number;
-        field: SelectionField;
-        value: string;
-    }
 
     const handleSelect = (index: number, field: SelectionField, value: string) => {
         const newSelections = [...selections];
